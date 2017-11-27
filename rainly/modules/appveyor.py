@@ -8,7 +8,7 @@ import requests
 # https://www.appveyor.com/
 # https://www.appveyor.com/docs/notifications/#webhooks
 
-@rainly.app.route("/travis/<string:unique_id>/<string:secret>", methods="POST")
+@rainly.app.route("/appveyor/<string:unique_id>/<string:secret>", methods="POST")
 def appveyor(unique_id, secret):
     # Webhook will look like this:
     # https://canary.discordapp.com/api/webhooks/<unique_id>/<secret>
