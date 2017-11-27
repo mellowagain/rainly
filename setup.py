@@ -21,7 +21,7 @@ setup(
     include_package_data=True,
     packages=[
         "rainly",
-        "dream.tests"
+        "rainly.modules"
     ],
     install_requires=requirements,
     classifiers=[
