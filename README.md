@@ -3,7 +3,7 @@
     <h1>rainly</h1>
 </div>
 
-Rainly `ˈreɪnli` is a quick and painless wrapper around various webhook
+Rainly `/ˈreɪnli/` is a quick and painless wrapper around various webhook
 services around the internet. Its goal is to make these webhooks work
 with [Discord](https://discord.gg), a popular chat and voice communication program.
 
@@ -14,10 +14,9 @@ with various supported services.
 ## Features
 
 * Painless wrapper around various WebHook services
-* Customizeable Embed object
+* Customizable Embed object
 * Support for Travis CI
 * Support for AppVeyor
-* Support for PayPal
 
 ## Installation
 
