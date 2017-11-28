@@ -1,6 +1,5 @@
-from rainly import rainly
+from flask import Blueprint
 from flask import request
-from flask import jsonify
 from flask import abort
 import simplejson as json
 import requests
@@ -8,7 +7,9 @@ import requests
 # https://travis-ci.org/
 # https://docs.travis-ci.com/user/notifications/#Webhooks-Delivery-Format
 
-@rainly.app.route("/travis/<string:unique_id>/<string:secret>", methods="POST")
+blueprint = Blueprint("Travis CI", "travisci")
+
+@blueprint.route("/travis/<string:unique_id>/<string:secret>", methods=["POST"])
 def travis_ci(unique_id, secret):
     # Webhook will look like this:
     # https://canary.discordapp.com/api/webhooks/<unique_id>/<secret>

@@ -1,6 +1,6 @@
+from modules import appveyor
+from modules import travisci
 from flask import Flask
-from modules import *
-import json
 import sys
 
 # Flask is handling everything
@@ -21,4 +21,6 @@ if __name__ == "__main__":
         print("Please provide a valid host as string and a valid port as integer.")
         exit(-1)
 
+    app.register_blueprint(appveyor.blueprint)
+    app.register_blueprint(travisci.blueprint)
     app.run(host=host, port=port)
