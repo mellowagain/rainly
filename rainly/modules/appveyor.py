@@ -28,15 +28,18 @@ def appveyor(unique_id, secret):
 
     discord_payload = json.dumps(
         {
-            "content": "embeds",
             "username": "Appveyor",
             "avatar_url": "https://www.appveyor.com/assets/img/appveyor-logo-256.png",
             "embeds": [
                 {
-                    "title": "Build " + payload["status"],
+                    "title": "Build #" + payload["buildNumber"],
                     "description": "`" + payload["commitId"] + "`: " + payload["status"],
                     "url": payload["buildUrl"],
-                    "color": color
+                    "color": color,
+                    "author": {
+                        "name": str(payload["repositoryName"]).split("/")[1],
+                        "url": payload["buildUrl"]  # Appveyor doesn't provide the actual repo url, so we use build url
+                    }
                 }
             ]
         }
