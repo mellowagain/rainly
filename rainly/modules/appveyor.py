@@ -32,13 +32,13 @@ def appveyor(unique_id, secret):
             "avatar_url": "https://www.appveyor.com/assets/img/appveyor-logo-256.png",
             "embeds": [
                 {
-                    "title": "Build #" + payload["buildNumber"],
-                    "description": "`" + payload["commitId"] + "`: " + payload["status"],
-                    "url": payload["buildUrl"],
+                    "title": "Build #" + str(payload["eventData"]["buildNumber"]),
+                    "description": "`" + payload["eventData"]["commitId"] + "`: " + payload["eventData"]["status"],
+                    "url": payload["eventData"]["buildUrl"],
                     "color": color,
                     "author": {
-                        "name": str(payload["repositoryName"]).split("/")[1],
-                        "url": payload["buildUrl"]  # Appveyor doesn't provide the actual repo url, so we use build url
+                        "name": str(payload["eventData"]["repositoryName"]).split("/")[1],
+                        "url": payload["eventData"]["buildUrl"]  # Appveyor doesn't send a repo url, so we use build url
                     }
                 }
             ]
