@@ -14,7 +14,7 @@ def appveyor(unique_id, secret):
     # Webhook will look like this:
     # https://canary.discordapp.com/api/webhooks/<unique_id>/<secret>
 
-    payload = json.loads(request.args.get(""))
+    payload = request.get_json(force=True, cache=False)
 
     color = 0
 
@@ -30,12 +30,14 @@ def appveyor(unique_id, secret):
             "content": "embeds",
             "username": "Appveyor",
             "avatar_url": "https://www.appveyor.com/assets/img/appveyor-logo-256.png",
-            "embeds": {
-                "title": "Build " + payload["status"],
-                "description": "`" + payload["commitId"] + "`: " + payload["status"],
-                "url": payload["buildUrl"],
-                "color": color
-            }
+            "embeds": [
+                {
+                    "title": "Build " + payload["status"],
+                    "description": "`" + payload["commitId"] + "`: " + payload["status"],
+                    "url": payload["buildUrl"],
+                    "color": color
+                }
+            ]
         }
     )
 
@@ -47,4 +49,4 @@ def appveyor(unique_id, secret):
     req = requests.post("https://canary.discordapp.com/api/webhooks/" + unique_id + "/" + secret,
                         json=discord_payload, headers=headers)
     if not req.ok:
-        abort(500)
+        abort(req.status_code)

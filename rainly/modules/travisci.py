@@ -34,12 +34,14 @@ def travis_ci(unique_id, secret):
             "content": "embeds",
             "username": "Travis CI",
             "avatar_url": "https://travis-ci.org/images/logos/TravisCI-Mascot-1.png",
-            "embeds": {
-                "title": "Build " + payload["status_message"],
-                "description": "`" + str(payload["commit"])[0:7] + "`: " + payload["state"],
-                "url": payload["build_url"],
-                "color": color
-            }
+            "embeds": [
+                {
+                    "title": "Build " + payload["status_message"],
+                    "description": "`" + str(payload["commit"])[0:7] + "`: " + payload["state"],
+                    "url": payload["build_url"],
+                    "color": color
+                }
+            ]
         }
     )
 
