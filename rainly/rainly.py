@@ -22,4 +22,4 @@ if __name__ == "__main__":
 
     app.register_blueprint(appveyor.blueprint)
     app.register_blueprint(travisci.blueprint)
-    app.run(port=port)
+    app.run(host="0.0.0.0", port=port)
