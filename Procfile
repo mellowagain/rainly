@@ -1,10 +1,4 @@
-web: python rainly/rainly.py 127.0.0.1 $PORT
-
-[packages]
-simplejson = "*"
-requests = "*"
-Flask = "*"
-setuptools = "*"
+web: python rainly/rainly.py $PORT
 
 [requires]
 python_version = "3.6"
