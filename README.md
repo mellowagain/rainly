@@ -7,7 +7,7 @@ Rainly `/ˈreɪnli/` is a quick and painless wrapper around various webhook
 services around the internet. Its goal is to make these webhooks work
 with [Discord](https://discord.gg), a popular chat and voice communication program.
 
-Rainly is currently deployed on [wontfix.club](http://rainly.wontfix.club/)
+Rainly is currently deployed on [Heroku](https://rainly.herokuapp.com/)
 and is ready for usage. Please read the wiki for instructions how to use it
 with various supported services.
 
@@ -26,6 +26,10 @@ $ cd rainly
 $ chmod +x setup.py
 $ ./setup.py install
 ```
+
+or make your life easy and
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Marc3842h/rainly/)
 
 ## Usage
 
