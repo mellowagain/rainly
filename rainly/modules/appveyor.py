@@ -1,4 +1,5 @@
 from flask import Blueprint
+from flask import Response
 from flask import request
 from flask import abort
 import simplejson as json
@@ -51,4 +52,4 @@ def appveyor(unique_id, secret):
     if not req.ok:
         abort(req.status_code)
 
-    return 200
+    return Response(req.content, status=200, mimetype="application/json")
