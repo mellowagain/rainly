@@ -51,7 +51,8 @@ def travis_ci(unique_id, secret):
     }
 
     req = requests.post("https://canary.discordapp.com/api/webhooks/" + unique_id + "/" + secret,
-                        json=discord_payload, headers=headers)
+                        data=discord_payload, headers=headers)
     if not req.ok:
-        abort(500)
+        abort(req.status_code)
 
+    return 200
