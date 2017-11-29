@@ -33,7 +33,7 @@ or make your life easy and
 
 ## Usage
 
-Rainly can be used either by using the hosted version on wontfix.club or
+Rainly can be used either by using the hosted version on Heroku or
 hosting it by yourself. Please visit the [Wiki](https://github.com/Marc3842h/rainly/wiki)
 for information about the usage of Rainly.
 

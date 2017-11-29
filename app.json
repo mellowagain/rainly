@@ -1,6 +1,6 @@
 {
   "name": "rainly",
-  "description": "",
+  "description": "A quick and painless wrapper around various webhook services around the internet for usage with Discord webhooks",
   "repository": "https://github.com/Marc3842h/rainly/",
   "keywords": [
     "rainly",
