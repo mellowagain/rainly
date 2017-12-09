@@ -33,7 +33,7 @@ def appveyor(unique_id, secret):
             "embeds": [
                 {
                     "title": "Build #" + str(payload["eventData"]["buildNumber"]),
-                    "description": "`" + payload["eventData"]["commitId"] + "`: " + payload["eventData"]["status"],
+                    "description": "`" + str(payload["eventData"]["commitId"])[0:7] + "`: " + payload["eventData"]["status"],
                     "url": payload["eventData"]["buildUrl"],
                     "color": color,
                     "author": {
