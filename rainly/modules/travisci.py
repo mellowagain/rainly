@@ -19,7 +19,7 @@ def travis_ci(unique_id, secret):
     if request.content_type != "application/x-www-form-urlencoded":
         return abort(500)
 
-    payload = json.loads(request.args.get("payload"))
+    payload = json.loads(request.args.get("payload", type=str))
 
     color = 0
 
