@@ -17,6 +17,7 @@ with various supported services.
 * Customizable Embed object
 * Support for Travis CI
 * Support for AppVeyor
+* Support for Circle CI
 
 ## Installation
 
