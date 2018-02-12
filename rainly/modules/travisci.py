@@ -21,8 +21,6 @@ def travis_ci(unique_id, secret):
 
     payload = json.loads(request.form["payload"])
 
-    color = 0
-
     if int(payload["result"]) == 0:
         color = 0x008000  # Success - Green
     elif int(payload["result"]) == 1:

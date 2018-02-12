@@ -17,8 +17,6 @@ def appveyor(unique_id, secret):
 
     payload = request.get_json(force=True, cache=False)
 
-    color = 0
-
     if payload["eventData"]["passed"]:
         color = 0x008000  # Success - Green
     elif payload["eventData"]["failed"]:
