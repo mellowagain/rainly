@@ -1,6 +1,7 @@
 from modules import appveyor
 from modules import travisci
 from modules import circleci
+from modules import vsts
 from flask import Flask
 import sys
 
@@ -24,4 +25,5 @@ if __name__ == "__main__":
     app.register_blueprint(appveyor.blueprint)
     app.register_blueprint(travisci.blueprint)
     app.register_blueprint(circleci.blueprint)
+    app.register_blueprint(vsts.blueprint)
     app.run(host="0.0.0.0", port=port)
