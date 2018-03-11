@@ -33,8 +33,8 @@ def travis_ci(unique_id, secret):
                     "url": payload["resource"]["url"],
                     "color": color,
                     "author": {
-                        "name": payload["definition"]["name"],
-                        "url": payload["definition"]["url"]
+                        "name": payload["resource"]["definition"]["name"],
+                        "url": payload["resource"]["definition"]["url"]
                     }
                 }
             ]
