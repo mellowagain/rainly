@@ -28,7 +28,7 @@ def travis_ci(unique_id, secret):
             "avatar_url": "https://ms-vsts.gallerycdn.vsassets.io/extensions/ms-vsts/team/1.122.0/1502737672963/Microsoft.VisualStudio.Services.Icons.Default",
             "embeds": [
                 {
-                    "title": "Build #" + payload["resource"]["id"],
+                    "title": "Build #" + str(payload["resource"]["id"]),
                     "description": str(payload["resource"]["status"]),
                     "url": payload["resource"]["url"],
                     "color": color,
