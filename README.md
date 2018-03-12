@@ -18,6 +18,7 @@ with various supported services.
 * Support for Travis CI
 * Support for AppVeyor
 * Support for Circle CI
+* Support for Visual Studio Team Services
 
 ## Installation
 
